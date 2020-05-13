@@ -67,7 +67,7 @@ static const char *dmenucmd[]       = { "dmenu_run", "-m", dmenumon, "-fn", dmen
 static const char *roficmd[]        = { "rofi", "-show", "drun", "-drun-display-format", "{name}", NULL };
 static const char *termcmd[]        = { "xterm", NULL };
 static const char *rangercmd[]      = { "xterm", "-class", "ranger,ranger", "-e", "ranger" };
-static const char *htopcmd[]        = { "xterm", "-geometry", "140x60+0+0", "-class", "htop,htop", "-e", "htop" };
+static const char *htopcmd[]        = { "xterm", "-geometry", "140x50+0+0", "-class", "htop,htop", "-e", "htop" };
 static const char *monitorcmd[]     = { "/home/bogdan/.config/scripts/monitors.sh", NULL };
 static const char *suspendcmd[]     = { "/home/bogdan/.config/scripts/prompt.sh", "systemctl suspend", NULL };
 static const char *lockcmd[]        = { "/home/bogdan/.config/scripts/lockscreen.sh", NULL };
@@ -120,6 +120,7 @@ static Key keys[] = {
   { MODKEY,                       XK_period,                        focusmon,       {.i = +1 } },
   { MODKEY|ShiftMask,             XK_comma,                         tagmon,         {.i = -1 } },
   { MODKEY|ShiftMask,             XK_period,                        tagmon,         {.i = +1 } },
+  { MODKEY,                       XK_s,                             togglesticky,   {0} },
   TAGKEYS(                        XK_q,                                             0)
   TAGKEYS(                        XK_d,                                             1)
   TAGKEYS(                        XK_a,                                             2)
