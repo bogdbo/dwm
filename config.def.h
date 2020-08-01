@@ -33,7 +33,7 @@ static const Rule rules[] = {
 	{ "firefox",              NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "htop",                 NULL,       NULL,       0,            1,           -1 },
 	{ "Spotify",              NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "jetbrains-rider",      NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "jetbrains-rider",      NULL,       NULL,       1 << 2,       1,           -1 },
 	{ "code-oss",             NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Google-chrome",        NULL,       NULL,       1 << 2,       0,           -1 },
 };
