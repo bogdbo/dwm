@@ -36,6 +36,7 @@ static const Rule rules[] = {
 	{ "jetbrains-rider",      NULL,       NULL,       1 << 2,       1,           -1 },
 	{ "code-oss",             NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Google-chrome",        NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "copyq",                NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -65,9 +66,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]       = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *roficmd[]        = { "rofi", "-show", "drun", "-drun-display-format", "{name}", NULL };
-static const char *termcmd[]        = { "xterm", NULL };
-static const char *rangercmd[]      = { "xterm", "-class", "ranger,ranger", "-e", "ranger" };
-static const char *htopcmd[]        = { "xterm", "-geometry", "140x50+0+0", "-class", "htop,htop", "-e", "htop" };
+static const char *termcmd[]        = { "alacritty", NULL };
+static const char *rangercmd[]      = { "alacritty", "--class", "ranger,ranger", "-e", "ranger", NULL };
+static const char *htopcmd[]        = { "alacritty", "-d", "150", "50", "--class", "htop,htop", "-e", "htop", NULL };
 static const char *monitorcmd[]     = { "/home/bogdan/.config/scripts/monitors.sh", NULL };
 static const char *suspendcmd[]     = { "/home/bogdan/.config/scripts/prompt.sh", "systemctl suspend", NULL };
 static const char *lockcmd[]        = { "/home/bogdan/.config/scripts/lockscreen.sh", NULL };
