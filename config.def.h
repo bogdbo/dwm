@@ -80,10 +80,12 @@ static const char *volupcmd[]       = { "amixer", "-q", "set", "Master", "5%+", 
 static const char *voldowncmd[]     = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 static const char *brupcmd[]        = { "light", "-A", "20", NULL };
 static const char *brdowncmd[]      = { "light", "-U", "20", NULL };
+static const char *emojipicker[]    = { "splatmoji", "-m", "type", NULL };
 
 static Key keys[] = {
   /* modifier                     key                               function        argument */
   { MODKEY,                       XK_r,                             spawn,          {.v = roficmd } },
+  { MODKEY,                       XK_period,                        spawn,          {.v = emojipicker } },
   { MODKEY|ShiftMask,             XK_Return,                        spawn,          {.v = termcmd } },
   { MODKEY|ControlMask,           XK_m,                             spawn,          {.v = monitorcmd } },
   { MODKEY,                       XK_e,                             spawn,          {.v = rangercmd } },
