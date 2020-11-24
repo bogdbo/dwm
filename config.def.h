@@ -80,7 +80,7 @@ static const char *volupcmd[]       = { "amixer", "-q", "set", "Master", "5%+", 
 static const char *voldowncmd[]     = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 static const char *brupcmd[]        = { "light", "-A", "20", NULL };
 static const char *brdowncmd[]      = { "light", "-U", "20", NULL };
-static const char *emojipicker[]    = { "splatmoji", "-m", "type", NULL };
+static const char *emojipicker[]    = { "splatmoji", "-m", "-s", "light", "copy",  NULL };
 
 static Key keys[] = {
   /* modifier                     key                               function        argument */
