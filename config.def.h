@@ -4,17 +4,18 @@
 
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const unsigned int gappx     = 6;        /* gap pixel between windows */
 static const unsigned int snap      = 10;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Consolas:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#FFFFFF"; // bg normal
-static const char col_gray2[]       = "#EEEEEE"; // border normal
+static const char col_gray2[]       = "#AAAAAA"; // border normal
 static const char col_gray3[]       = "#222222"; // text color normal
 static const char col_gray4[]       = "#FFFFFF"; // text color selected
 static const char col_cyan[]        = "#008bc2";
-static const char col_green[]       = "#8aff00";
+static const char col_green[]       = "#8aff00"; // border selected
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -67,6 +68,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]       = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_green, "-sf", col_gray4, NULL };
 static const char *roficmd[]        = { "rofi", "-show", "drun", "-drun-display-format", "{name}", NULL };
+static const char *rofiwindowcmd[]  = { "rofi", "-show", "window",  NULL };
 static const char *termcmd[]        = { "alacritty", NULL };
 static const char *rangercmd[]      = { "alacritty", "--class", "ranger,ranger", "-e", "ranger", NULL };
 static const char *htopcmd[]        = { "alacritty", "-d", "150", "50", "--class", "htop,htop", "-e", "htop", NULL };
@@ -86,6 +88,7 @@ static const char *emojipicker[]    = { "splatmoji", "-m", "-s", "light", "copy"
 static Key keys[] = {
   /* modifier                     key                               function        argument */
   { MODKEY,                       XK_r,                             spawn,          {.v = roficmd } },
+  { MODKEY,                       XK_Tab,                           spawn,          {.v = rofiwindowcmd } },
   { MODKEY,                       XK_period,                        spawn,          {.v = emojipicker } },
   { MODKEY|ShiftMask,             XK_Return,                        spawn,          {.v = termcmd } },
   { MODKEY|ControlMask,           XK_m,                             spawn,          {.v = monitorcmd } },
